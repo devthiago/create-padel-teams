@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="h-full bg-gray-100">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-full">
+  <div class="min-h-[100vh] flex flex-col">
+    <header class="w-full flex bg-gray-800 pt-12 pb-24">
+      <h1 class="w-full text-[4rem] text-center font-bolder text-gray-300">
+        Duplas de Padel 🎾
+      </h1>
+    </header>
+    <main class="-mt-12 pb-8 px-8 flex-1 flex-shrink flex flex-col">
+      <div class="flex flex-col sm:flex-row flex-nowrap gap-4 flex-1 flex-shrink">
+        <section class="overflow-hidden rounded-lg bg-white shadow p-6 flex-1 min-h-full flex flex-col gap-3">
+          <h3 class="font-bold">Lista de jogadores <span class="font-normal text-gray-500">(<span id="players-total">2</span>)</span></h3>
+          <div class="flex gap-2">
+            <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 gap-2">
+              Esquerda <span id="players-total-left" class="font-bold text-black">0</span>
+            </span>
+            <span class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10 gap-2">
+              Direita <span id="players-total-right" class="font-bold text-black">0</span>
+            </span>
+            <span class="inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-700/10 gap-2">
+              Qualquer <span id="players-total-any" class="font-bold text-black">2</span>
+            </span>
+          </div>
+          <div id="players-list" contenteditable="true" role="textbox" class="rounded-lg border border-gray-200 p-3 flex-1 flex-shrink">
+            Jogador 1<br />
+            Jogador 2
+          </div>
+          <button id="random-pairs" type="button"
+          class="rounded-md bg-gray-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          Sortear duplas
+        </button>
+      </section>
+      <section class="overflow-hidden rounded-lg bg-white shadow p-6 flex-1 min-h-full flex flex-col gap-3">
+        <h3 class="w-full font-bold">Duplas geradas <span class="font-normal text-gray-500">(<span id="pairs-total">0</span>)</span>
+          <button data-action="copy" data-target="pairs-list" type="button" class="float-right"></button>
+        </h3>
+        <div id="pairs-list" class="rounded-lg border border-gray-200 p-3 flex-1 flex-shrink"></div>
+        <h3 class="w-full font-bold align-middle">Jogadores sem dupla <span class="font-normal text-gray-500">(<span id="remain-total">0</span>)</span>
+          <button data-action="copy" data-target="remain-list" type="button" class="float-right"></button>
+        </h3>
+        <div id="remain-list" class="rounded-lg border border-gray-200 p-3 flex-1 flex-shrink"></div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div class="border-t border-gray-200 py-8 text-center text-sm text-gray-500"><span
+        class="block sm:inline">&copy; 2024</span> <span class="block sm:inline">Criado por Thiago Alves.</span></div>
+      </div>
+    </footer>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
